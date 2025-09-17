@@ -70,14 +70,14 @@ void setNumberOnClock(int num) {
 	if (num < 0 || num >= NUM_LEDS) {
 		return;
 	}
-	HAL_GPIO_WritePin(GPIOA, ledPins[num], GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOA, ledPins[num - 1], GPIO_PIN_SET);
 }
 
 void clearNumberOnClock(int num) {
 	if (num < 0 || num >= NUM_LEDS) {
 		return;
 	}
-	HAL_GPIO_WritePin(GPIOA, ledPins[num], GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOA, ledPins[num - 1], GPIO_PIN_RESET);
 }
 
 void displayClock(int hr, int min, int sec) {
