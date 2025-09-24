@@ -70,6 +70,7 @@ void setNumberOnClock(int num) {
 	if (num < 0 || num >= NUM_LEDS) {
 		return;
 	}
+	if (num == 0) num = 12;
 	HAL_GPIO_WritePin(GPIOA, ledPins[num - 1], GPIO_PIN_SET);
 }
 
@@ -77,6 +78,7 @@ void clearNumberOnClock(int num) {
 	if (num < 0 || num >= NUM_LEDS) {
 		return;
 	}
+	if (num == 0) num = 12;
 	HAL_GPIO_WritePin(GPIOA, ledPins[num - 1], GPIO_PIN_RESET);
 }
 
@@ -255,3 +257,4 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
